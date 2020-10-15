@@ -52,7 +52,7 @@ function buildMetadata(sample) {
 
   });
 }
-
+// Deliverable 1
 // 1. Create the buildCharts function.
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
@@ -85,16 +85,59 @@ function buildCharts(sample) {
     
          x: holdSAMPLE_value.slice(0, 10).reverse(),
          y: {yticks},
-         type: "bar",
+         text: holdOTU_ids.slice(0,10).reverse(),
+         type: 'bar',
          orientation: 'h'
     };
      
     // // 9. Create the layout for the bar chart. 
-     var barLayout = {
-      title: "Top 10 Bacteria Cultures Found",
+    var barLayout = {
+      title: 'Top 10 Bacteria Cultures Found',
       barmode: 'stack'
   
     };
     // 10. Use Plotly to plot the data with the layout. 
-  Plotly.newPlot("bar-plot", [barData], [barLayout]);
-   })};
+  Plotly.newPlot("bar-plot", [barData], barLayout);
+
+    //Deliverable 2
+    // Use Plotly to plot the data with the layout. 
+
+    // 1. Create the trace for the bubble chart.
+    var bubbleData = {
+      x: holdOTU_ids.slice(0,10).reverse(),
+      y: holdSAMPLE_value.slice(0, 10).reverse(),
+      text: holdOTU_labels,
+      mode: 'markers',
+      marker: {
+        size: holdSAMPLE_value.slice(0, 10).reverse(),
+        color: holdOTU_ids.slice(0,10).reverse(),
+      //   colorscale: [???]
+       }
+    };
+
+    // // 2. Create the layout for the bubble chart.
+    var bubbleLayout = {
+      title: 'Bacteria Cultures Per Sample',
+      //x-axis: 'OTU ID',
+      //margins: ???,
+      //hovermode: true
+   };
+
+    // 3. Use Plotly to plot the data with the layout.
+    
+    Plotly.newPlot("bubble-plot", [bubbleData], bubbleLayout);
+
+  // Deliverable 3
+   // 4. Create the trace for the gauge chart.
+  var gaugeData = [
+     
+  ];
+  
+  // 5. Create the layout for the gauge chart.
+  var gaugeLayout = { 
+   
+  };
+
+  // 6. Use Plotly to plot the gauge data and layout.
+  
+  })};
