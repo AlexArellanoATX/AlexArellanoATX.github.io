@@ -143,7 +143,7 @@ function buildCharts(sample) {
       {
         domain: { x: [0, 1], y: [0, 1] },
         value: parseInt(wfreq),
-        title: { text: "Belly Button Washing Frequency<br>Washings per Week" },
+        title: { text: "Belly Button Washing Frequency" },
         type: "indicator",
         mode: "gauge+number",
         gauge: {
