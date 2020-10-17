@@ -5,9 +5,9 @@
 Using Plotly with JavaScript to create interactive, dynamic websites that provide users functionality with appealing visualizations
 
 ### Resources
-JavaScript
-Plotly
-Github Pages
+* JavaScript
+* Plotly
+* Github Pages
 
 
 ## Results

@@ -102,7 +102,7 @@ function buildCharts(sample) {
         tickmode: "linear",
       
       },
-      plot_bgcolor: "black",
+      plot_bgcolor: "#FFF3",
       paper_bgcolor:"#FFF3"
     };
     // 10. Use Plotly to plot the data with the layout. 
@@ -130,7 +130,7 @@ function buildCharts(sample) {
       xaxis: { title: 'OTU ID' },
 
       hovermode: true,
-      plot_bgcolor:"teal",
+      plot_bgcolor:"#FFF3",
       paper_bgcolor:"#FFF3" 
     };
 
