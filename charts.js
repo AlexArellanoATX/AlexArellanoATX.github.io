@@ -12,11 +12,12 @@ function init() {
         .text(sample)
         .property("value", sample);
     });
-
+    console.log(sampleNames)
     // Use the first sample from the list to build the initial plots
     var firstSample = sampleNames[0];
     buildCharts(firstSample);
     buildMetadata(firstSample);
+    console.log(sampleNames)
   });
 }
 
@@ -36,7 +37,9 @@ function buildMetadata(sample) {
     var metadata = data.metadata;
     // Filter the data for the object with the desired sample number
     var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
+    console.log(resultArray)
     var result = resultArray[0];
+    console.log(result)
     // Use d3 to select the panel with id of `#sample-metadata`
     var PANEL = d3.select("#sample-metadata");
 
@@ -97,8 +100,10 @@ function buildCharts(sample) {
       barmode: 'stack',
       yaxis: {
         tickmode: "linear",
+      
       },
-
+      plot_bgcolor: "black",
+      paper_bgcolor:"#FFF3"
     };
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar-plot", [barData], barLayout);
@@ -124,7 +129,9 @@ function buildCharts(sample) {
       title: 'Bacteria Cultures Per Sample',
       xaxis: { title: 'OTU ID' },
 
-      hovermode: true
+      hovermode: true,
+      plot_bgcolor:"teal",
+      paper_bgcolor:"#FFF3" 
     };
 
     // 3. Use Plotly to plot the data with the layout.
@@ -149,9 +156,6 @@ function buildCharts(sample) {
         gauge: {
           axis: { range: [0, 10], tickcolor: 'darkblue' },
           bar: { color: 'black'},
-          //bgcolor: "white",
-          //borderwidth: 1,
-          //bordercolor: "black",
           steps: [
             { range: [0, 2], color: "red" },
             { range: [2, 4], color: "orange" },
@@ -165,7 +169,9 @@ function buildCharts(sample) {
 
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = {
-      width: 600, height: 500, margin: { t: 0, b: 0 }
+      width: 400, height: 400, margin: { t: 0, b: 0 },
+      plot_bgcolor: "teal",
+      paper_bgcolor:"#FFF3"
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
